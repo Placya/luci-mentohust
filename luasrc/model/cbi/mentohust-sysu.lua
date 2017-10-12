@@ -7,9 +7,9 @@ Author:a1ive
 
 require("luci.tools.webadmin")
 
-m = Map("mentohust", translate("MentoHUST"), translate("锐捷、赛尔认证客户端."))
+m = Map("mentohust-sysu", translate("MentoHUST"), translate("锐捷、赛尔认证客户端."))
 function m.on_commit(self)
-os.execute("/etc/init.d/mentohust start")
+os.execute("/etc/init.d/mentohust-sysu start")
 end
 
 s = m:section(TypedSection, "option", translate("启动选项"),translate("设置mentohust启动选项"))
@@ -20,7 +20,7 @@ s:option(Flag, "enable", translate("启用MentoHUST"), translate("启用或禁�
 s:option(Flag, "boot", translate("开机自启"), translate("开机时自动启动mentohust")).default="0"
 
 
-s = m:section(TypedSection, "mentohust", translate("设置mentohust"),translate("以下选项为mentohust的参数"))
+s = m:section(TypedSection, "mentohust-sysu", translate("设置mentohust"),translate("以下选项为mentohust的参数"))
 s.anonymous = true
 
 s:option(Value, "Username", translate("Username")).default="hust"
@@ -76,7 +76,7 @@ t.default = "1"
 
 s:option(Value, "Version", translate("客户端版本号"),translate("默认0.00表示兼容xrgsu")).default="0.00"
 
-s:option(Value, "DataFile", translate("自定义数据文件"),translate("默认不使用")).default="/etc/mentohust"
+s:option(Value, "DataFile", translate("自定义数据文件"),translate("默认不使用")).default="/etc/mentohust-sysu"
 
 s:option(Value, "dhcpscript", translate("DHCP脚本"),translate("默认dhclient")).default="udhcpc -i"
 
