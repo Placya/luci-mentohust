@@ -7,7 +7,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=luci-app-mentohust-sysu-double
+PKG_NAME:=luci-app-mentohust-sysu-triple
 PKG_VERSION:=0.12
 PKG_RELEASE:=1
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
@@ -21,7 +21,7 @@ define Package/$(PKG_NAME)
   CATEGORY:=LuCI
   SUBMENU:=3. Applications
   DEPENDS:=
-  TITLE:=MentoHust SYSU(Double)                       
+  TITLE:=MentoHust SYSU(Triple)                       
   PKGARCH:=all
 endef
 
@@ -35,9 +35,9 @@ endef
 define Package/$(PKG_NAME)/postinst
 #!/bin/sh 
 [ -n "$${IPKG_INSTROOT}" ] || {
-	( . /etc/uci-defaults/luci-mentohust-sysu-double ) && rm -f /etc/uci-defaults/luci-mentohust-sysu-double
-	chmod 755 /etc/init.d/mentohust-sysu-double >/dev/null 2>&1
-	/etc/init.d/mentohust-sysu-double enable >/dev/null 2>&1
+	( . /etc/uci-defaults/luci-mentohust-sysu-triple ) && rm -f /etc/uci-defaults/luci-mentohust-sysu-triple
+	chmod 755 /etc/init.d/mentohust-sysu-triple >/dev/null 2>&1
+	/etc/init.d/mentohust-sysu-triple enable >/dev/null 2>&1
 	exit 0
 }
 endef

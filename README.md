@@ -1,2 +1,2 @@
-# luci-mentohust-sysu-double
-make package/luci-mentohust-sysu-double/compile
+# luci-mentohust-sysu-triple
+make package/luci-mentohust-sysu-triple/compile
